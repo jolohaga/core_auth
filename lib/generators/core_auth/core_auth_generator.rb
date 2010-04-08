@@ -6,4 +6,8 @@ class CoreAuthGenerator < Rails::Generators::Base
     directory 'public'
     directory 'vendor'
   end
+  
+  def self.source_root
+    File.join(File.dirname(__FILE__), 'templates')
+  end
 end

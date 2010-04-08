@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name    = 'core_auth'
-  gem.version = '0.0.1'
+  gem.version = '0.1.0'
   gem.authors = 'Jose Hales-Garcia'
   gem.email = 'jolohaga@me.com'
   gem.homepage = %q{http://github.com/jolohaga/core_auth}
