@@ -1,0 +1,37 @@
+<%= render :partial => 'right_header' %>
+<div id='rights'>
+<%- table_for :rights do -%>
+  <tr>
+    <td><label>Name</label></td>
+    <td><label>Controller</label></td>
+    <td><label>Action</label></td>
+    <td><label>Type</label></td>
+  </tr>
+  <%= render :partial => @rights %>
+<%- end -%>
+</div>
+<br/>
+<div class='pagination-controls'>
+  <%= will_paginate @rights %>
+</div>
+<%- system_area do -%>
+<h3>New Right</h3>
+<%- form_for @right do |f| -%>
+<p><%= f.error_messages %></p>
+<table>
+  <tr>
+    <td><%= f.label :name, "Name" %></td>
+    <td><%= f.label :controller, "Controller" %></td>
+    <td><%= f.label :action, "Action" %></td>
+    <td><%= f.label :authorization_type, "Type" %></td>
+  </tr>
+  <tr>
+    <td><%= f.text_field :name %></td>
+    <td><%= f.text_field :controller %></td>
+    <td><%= f.text_field :action %></td>
+    <td><%= f.select :authorization_type, [Right::ANCILLARY] %></td>
+  </tr>
+</table>
+<p><%= f.submit "Add Right" %> | <%= link_to 'Discover', discover_rights_path %></p>
+<%- end -%>
+<%- end -%>

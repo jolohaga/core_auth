@@ -1,0 +1,37 @@
+<%= render :partial => 'user_header' %>
+<div id='users'>
+<%- table_for :users do -%>
+  <tr>
+    <td><label>Name</label></td>
+    <td><label>Email</label></td>
+    <td><label>Username</label></td>
+    <td><label>Role</label></td>
+    <td><label>Active?</label></td>
+  </tr>
+  <%= render :partial => @users %>
+<%- end -%>
+</div>
+<br/>
+<%- system_area do -%>
+<h3>New User</h3>
+<%- form_for @user do |f| -%>
+<p><%= f.error_messages %></p>
+<table>
+  <tr>
+    <td><%= f.label :name, "Name" %></td>
+    <td><%= f.label :email, "Email" %></td>
+    <td><%= f.label :username, "Username" %></td>
+    <td><%= f.label :password, "Password" %></td>
+    <td><%= f.label :role, "Role" %></td>
+  </tr>
+  <tr>
+    <td><%= f.text_field :name %></td>
+    <td><%= f.text_field :email %></td>
+    <td><%= f.text_field :username %></td>
+    <td><%= password_field_tag :password %></td>
+    <td><%= select_tag :role, options_from_collection_for_select(@roles, "id", "name") %></td>
+  </tr>
+</table>
+<p><%= f.submit "Add User" %></p>
+<%- end -%>
+<%- end -%>

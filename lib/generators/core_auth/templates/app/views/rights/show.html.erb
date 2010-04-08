@@ -1,0 +1,27 @@
+<%= render :partial => 'right_header' %>
+<h1><%= link_to_unless_current @right.name, right_path(@right), :class => 'header-link' %></h1>
+<p>
+  <b>Controller:</b>
+  <%=h @right.controller %>
+</p>
+<p>
+  <b>Action:</b>
+  <%=h @right.action %>
+</p>
+<p>
+  <b>Type:</b>
+  <%=h @right.authorization_type %>
+</p>
+<%- only_ancillary do -%>
+<%= link_to 'Edit', edit_right_path(@right) %> |
+<%= link_to 'Destroy', @right, :confirm => 'Are you sure?', :method => :delete %>
+<%- end -%>
+<hr/>
+<h2>Roles</h2>
+<div id='roles'>
+<%- table_for :roles do -%>
+  <td><label>Name</label></td>
+  <td></td>
+  <%= render :partial => @roles %>
+<%- end -%>
+</div>

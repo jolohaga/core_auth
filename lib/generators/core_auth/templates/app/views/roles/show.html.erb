@@ -1,0 +1,31 @@
+<%= render :partial => 'role_header' %>
+<h1><%= link_to_unless_current @role.name, role_path(@role), :class => 'header-link' %></h1>
+<%- unless_system do -%>
+<%= link_to 'Edit', edit_role_path(@role) %> |
+<%= link_to 'Destroy', @role, :confirm => 'Are you sure?', :method => :delete %>
+<%- end -%>
+<hr/>
+<h2>Rights</h2>
+<div id='rights'>
+<%- table_for :all_rights_by_group do -%>
+  <tr>
+    <td><label>Controller</label></td>
+    <td><label>Name</label></td>
+    <td><label>Action</label></td>
+    <td><label>Assigned?</label></td>
+  </tr>
+  <%- @all_rights_by_group.keys.each do |key| -%>
+  <tr>
+    <td colspan='4' style='background-color: #fffff8;'><%= key.titleize %></td>
+  </tr>
+  <%- @all_rights_by_group[key].each do |right| -%>
+  <tr>
+    <td></td>
+    <td><%= right.name %></td>
+    <td><%= right.action %></td>
+    <td><%= check_box_tag "rights[#{right.id}]", 'assigned?', !@rights_by_index[right.id].nil?, {:disabled => @role.admin?, :onchange => remote_function(:update => "rights[#{right.id}]", :url => { :action => :assign, :id => @role.id, :right_id => right.id })} %></td>
+  </tr>
+  <%- end -%>
+  <%- end -%>
+<%- end -%>
+</div>

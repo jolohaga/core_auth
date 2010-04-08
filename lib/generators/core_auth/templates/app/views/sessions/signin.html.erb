@@ -1,0 +1,15 @@
+<%- form_tag signin_path  do -%>
+	<table>
+		<tr>
+			<td class='label'>Username:</td>
+			<td><%= text_field_tag "username" %></td>
+		</tr>
+		<tr>
+			<td class='label'>Password:</td>
+			<td><%= password_field_tag "password" %></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding-top: 10px;"><%= submit_tag "Sign in" %></td>
+		</tr>
+	</table>
+<%- end -%>

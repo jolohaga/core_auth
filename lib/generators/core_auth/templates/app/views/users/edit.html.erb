@@ -1,0 +1,32 @@
+<%= render :partial => 'user_header' %>
+<h1><%= link_to_unless_current @user.name, user_path(@user), :class => 'header-link' %></h1>
+<%- form_for(@user) do |f| -%>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br/>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :username %><br/>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %> (leave blank to keep current password)<br/>
+    <%= password_field_tag :password %>
+  </p>
+  <p>
+    <%= f.label :role %>
+    <%= select_tag :role, options_from_collection_for_select(@roles, "id", "name", @user.role.id) %>
+  </p>
+  <p>
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<%- end -%>

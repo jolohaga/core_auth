@@ -1,0 +1,24 @@
+<%= render :partial => 'right_header' %>
+<h1><%= link_to_unless_current @right.name, right_path(@right), :class => 'header-link' %></h1>
+<%- form_for(@right) do |f| -%>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :controller %><br/>
+    <%= f.text_field :controller %>
+  </p>
+  <p>
+    <%= f.label :action %><br/>
+    <%= f.text_field :action %>
+  </p>
+  <p>
+    <%= f.label :authorization_type %><br/>
+    <%= f.select :authorization_type, Right::ANCILLARY %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<%- end -%>

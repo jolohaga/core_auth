@@ -1,0 +1,22 @@
+<%= render :partial => 'user_header' %>
+<h1><%= link_to_unless_current @user.name, user_path(@user), :class => 'header-link' %></h1>
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+<p>
+  <b>Username:</b>
+  <%=h @user.username %>
+</p>
+<p>
+  <b>Role:</b>
+  <%=h @user.role.name %>
+</p>
+<p>
+  <b>Active:</b>
+  <%=h @user.active %>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%- unless_admin do -%>|
+<%= link_to 'Destroy', @user, :confirm => 'Are you sure?', :method => :delete %>
+<%- end -%>
