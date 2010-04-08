@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('core_auth', '1.0.0') do |config|
+Echoe.new('core_auth', '2.0.0') do |config|
   config.summary                  = 'User authentication and role-based authorization.'
   config.author                   = 'Jose Hales-Garcia'
   config.url                      = 'http://github.com/jolohaga/core_auth'
