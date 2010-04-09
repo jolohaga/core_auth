@@ -8,6 +8,16 @@ A frequently recurring task in writing a new web application is creating a role-
 
 == Features/Problems:
 
+* The protected area comprises of a system section (where CoreAuth is controlled and should only
+  be managed by a root account-style user) and an admin section where application administrators
+  can control the application.
+  
+  Example: Managing users, roles, and rights (CoreAuth actions) are under system.  Managing
+  application specific actions, like new/edit/delete comments, etc. are under admin.
+  
+  System and Admin are presented under separate paths in the views and separate controllers so
+  they are easier to administrate.
+  
 * Two layouts are defined: site.html.erb and admin.html.erb (with respective .css files).
   site.html.erb is the public layout and invoked in the application controller.
   admin.html.erb is the admin layout and invoked in the CoreAuth controllers.
