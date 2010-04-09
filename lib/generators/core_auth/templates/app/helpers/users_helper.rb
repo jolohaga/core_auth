@@ -1,7 +1,7 @@
 module UsersHelper
-  def unless_admin
+  def unless_admin(&block)
     unless @user.admin?
-      yield
+      content_tag(:span, &block)
     end
   end
 end
