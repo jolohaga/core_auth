@@ -1,3 +1,10 @@
+=== 4.1.0 / 2010-04-09
+
+* Changed migration stage to simple file copy ('directory db').
+  The migration_template method isn't working at this time.
+  Renamed the prefix numbers of the migration files to be compatible
+  with the non-timestamped migration naming convention.
+
 === 4.0.0 / 2010-04-09
 
 * Added the migration code.
