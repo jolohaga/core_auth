@@ -32,7 +32,7 @@ class CoreAuthGenerator < Rails::Generators::Base
   end
   #
   # End CoreAuth
-#{marker}
+end
 }
     end
     
@@ -41,7 +41,7 @@ class CoreAuthGenerator < Rails::Generators::Base
     marker = 'module ApplicationHelper'
     gsub_file 'app/helpers/application_helper.rb', /(#{Regexp.escape(marker)})/mi do |match|
       match =%q{
-#{marker}
+module ApplicationHelper
   # Start CoreAuth
   #
   def table_for(object, options = {}, &block)

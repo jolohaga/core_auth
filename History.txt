@@ -1,3 +1,7 @@
+=== 2.4.0 / 2010-04-08
+
+* Debugged use of gsub_file.  Replaced #{match} with string.  #{match} isn't interpolated inside %q{}.
+  
 === 2.3.0 / 2010-04-08
 
 * Debugged use of gsub_file.  Forgot to remove the quotation escapes '\'.
