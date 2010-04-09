@@ -1,3 +1,7 @@
+=== 3.0.1 / 2010-04-09
+
+* Changed the handling of the gsub result in the gsub_file actions.
+
 === 3.0.0 / 2010-04-08
 
 * Modified application helper code to be Rails 3 compatible.

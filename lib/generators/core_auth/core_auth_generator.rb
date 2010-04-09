@@ -6,11 +6,11 @@ class CoreAuthGenerator < Rails::Generators::Base
     directory 'public'
     directory 'vendor'
     
-    # Inject code before end of application_controller.rb.
+    # Inject code at beginning of application_controller.rb.
     #
-    marker = 'end'
+    marker = 'class ApplicationController < ActionController::Base'
     gsub_file 'app/controllers/application_controller.rb', /(#{Regexp.escape(marker)})/mi do |match|
-      match =%q{
+      match +=%q{
   # Start CoreAuth
   #
   # Roles/rights authorization applied globally.  To override, and make actions accessible
@@ -32,7 +32,6 @@ class CoreAuthGenerator < Rails::Generators::Base
   end
   #
   # End CoreAuth
-end
 }
     end
     
@@ -40,8 +39,7 @@ end
     #
     marker = 'module ApplicationHelper'
     gsub_file 'app/helpers/application_helper.rb', /(#{Regexp.escape(marker)})/mi do |match|
-      match =%q{
-module ApplicationHelper
+      match +=%q{
   # Start CoreAuth
   #  
   def table_for(object, options = {}, &block)
