@@ -6,28 +6,20 @@ class CoreAuthGenerator < Rails::Generators::Base
     directory 'public'
     directory 'vendor'
     
-    # Inject code at beginning of application_controller.rb.
-    #
-    marker = 'class ApplicationController < ActionController::Base'
-    gsub_file 'app/controllers/application_controller.rb', /(#{Regexp.escape(marker)})/mi do |match|
-      match <<-CODE
-\\1
-  #
-  # Roles/rights authorization applied globally.  To override (i.e. make actions accessible
-  # and views viewable by the public), put in the sub-classed controller the following:
-  # skip_before_filter :check_authentication, :check_authorization
-  #
-  include CoreAuth
-
-  helper_method :user
-CODE
-    end
-    
-    # Inject code at end of application_controller.rb.
+    # Inject code before end of application_controller.rb.
     #
     marker = 'end'
     gsub_file 'app/controllers/application_controller.rb', /(#{Regexp.escape(marker)})/mi do |match|
-      match <<-CODE
+      match <%q{
+  # Start CoreAuth
+  #
+  # Roles/rights authorization applied globally.  To override, and make actions accessible
+  # and views viewable by the public, put in the public controller the following:
+  # skip_before_filter :check_authentication, :check_authorization
+  #
+  include CoreAuth
+  
+  helper_method :user
   before_filter :set_originating_path
 
   def set_originating_path
@@ -38,29 +30,30 @@ CODE
   def originating_path
     session[:originating_path]
   end
-\\1
-CODE
+  #
+  # End CoreAuth
+end
+}
     end
     
     # Inject code at beginning of application_helper.rb.
     #
     marker = 'module ApplicationHelper'
     gsub_file 'app/helpers/application_helper.rb', /(#{Regexp.escape(marker)})/mi do |match|
-      match <<-CODE
-\\1
-  #
-  # Start CoreAuth Helpers
+      match <%q{
+module ApplicationHelper
+  # Start CoreAuth
   #
   def table_for(object, options = {}, &block)
-    style = options[:style] || ""
-    concat("<table class='table-for \#{style}'>")
+    style = options[:style] || \"\"
+    concat(\"<table class='table-for \#{style}'>\")
     yield
     concat('</table>')
   end
 
   def personal_area(&block)
     if session[:user_id]
-      concat "<div style='position: absolute; text-align: right; width: 960px;'>"
+      concat \"<div style='position: absolute; text-align: right; width: 960px;'>\"
       yield
       concat '</div>'
     end
@@ -97,9 +90,8 @@ CODE
     end
   end
   #
-  # End CoreAuth Helpers
-  #
-CODE
+  # End CoreAuth
+}
     end
   end
   

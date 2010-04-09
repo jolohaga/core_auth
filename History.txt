@@ -1,3 +1,7 @@
+=== 2.1.0 / 2010-04-08
+
+* Debugged use of gsub_file.  It doesn't like here doc notation, but it does like %q{}'s.
+
 === 2.0.0 / 2010-04-08
 
 * Migrated most of the Rails 2.x generator code to the Thor syntax in core_auth_generator.rb.
