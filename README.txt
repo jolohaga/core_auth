@@ -4,9 +4,13 @@
 
 Simple user authentication and role-based authorization.
 
-A frequently recurring task in writing a new web application is creating a role-based auth system to form the basis for access control in the application.  These frequent tasks are extracted in this generator.
+A frequently recurring task in writing a new web application is creating a role-based auth system to form the basis for access control in the application.  The tasks of creating such a system are extracted in this generator.
 
 == Features/Problems:
+
+* Two layouts are defined: site.html.erb and admin.html.erb (with respective .css files).
+  site.html.erb is the public layout and invoked in the application controller.
+  admin.html.erb is the admin layout and invoked in the CoreAuth controllers.
 
 == Synopsis:
 

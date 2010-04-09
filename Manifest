@@ -27,6 +27,7 @@ lib/generators/core_auth/templates/app/views/administration/index.html.erb
 lib/generators/core_auth/templates/app/views/dashboard/_dashboard_header.html.erb
 lib/generators/core_auth/templates/app/views/dashboard/index.html.erb
 lib/generators/core_auth/templates/app/views/layouts/admin.html.erb
+lib/generators/core_auth/templates/app/views/layouts/site.html.erb
 lib/generators/core_auth/templates/app/views/profile/_profile_header.html.erb
 lib/generators/core_auth/templates/app/views/profile/edit.html.erb
 lib/generators/core_auth/templates/app/views/profile/show.html.erb
@@ -47,6 +48,7 @@ lib/generators/core_auth/templates/app/views/roles/new.html.erb
 lib/generators/core_auth/templates/app/views/roles/show.html.erb
 lib/generators/core_auth/templates/app/views/sessions/signin.html.erb
 lib/generators/core_auth/templates/app/views/sessions/signout.html.erb
+lib/generators/core_auth/templates/app/views/shared/_notice.html.erb
 lib/generators/core_auth/templates/app/views/system/_system_header.html.erb
 lib/generators/core_auth/templates/app/views/system/index.html.erb
 lib/generators/core_auth/templates/app/views/users/_user.html.erb
@@ -64,6 +66,7 @@ lib/generators/core_auth/templates/db/migrate/006_populate_roles.rb
 lib/generators/core_auth/templates/db/migrate/007_populate_rights.rb
 lib/generators/core_auth/templates/db/migrate/008_initiate_users.rb
 lib/generators/core_auth/templates/public/stylesheets/admin.css
+lib/generators/core_auth/templates/public/stylesheets/site.css
 lib/generators/core_auth/templates/vendor/plugins/core_auth/MIT-LICENSE
 lib/generators/core_auth/templates/vendor/plugins/core_auth/README
 lib/generators/core_auth/templates/vendor/plugins/core_auth/Rakefile

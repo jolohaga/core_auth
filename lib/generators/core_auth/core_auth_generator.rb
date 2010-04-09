@@ -25,6 +25,12 @@ class CoreAuthGenerator < Rails::Generators::Base
   
   helper_method :user
   before_filter :set_originating_path
+  
+  # This is global public layout.  Override it with your own.
+  #
+  layout 'site'
+  #
+  # Note: the CoreAuth controller layout is admin.html.erb and each CoreAuth controller invokes its use.
 
   def set_originating_path
     session[:last_originating_path] = session[:originating_path]

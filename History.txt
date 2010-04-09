@@ -1,3 +1,7 @@
+=== 5.0.1 / 2010-04-09
+
+* Added the site.html.erb layout.
+
 === 5.0.0 / 2010-04-09
 
 * Added routes code.
