@@ -1,3 +1,8 @@
+=== 2.2.0 / 2010-04-08
+
+* Debugged use of gsub_file.  Replaced '<' (comparison) with '=' (assignment).
+
+
 === 2.1.0 / 2010-04-08
 
 * Debugged use of gsub_file.  It doesn't like here doc notation, but it does like %q{}'s.

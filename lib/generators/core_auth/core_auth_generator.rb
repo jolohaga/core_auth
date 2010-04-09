@@ -10,7 +10,7 @@ class CoreAuthGenerator < Rails::Generators::Base
     #
     marker = 'end'
     gsub_file 'app/controllers/application_controller.rb', /(#{Regexp.escape(marker)})/mi do |match|
-      match <%q{
+      match =%q{
   # Start CoreAuth
   #
   # Roles/rights authorization applied globally.  To override, and make actions accessible
@@ -40,7 +40,7 @@ end
     #
     marker = 'module ApplicationHelper'
     gsub_file 'app/helpers/application_helper.rb', /(#{Regexp.escape(marker)})/mi do |match|
-      match <%q{
+      match =%q{
 module ApplicationHelper
   # Start CoreAuth
   #
