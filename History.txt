@@ -1,3 +1,8 @@
+=== 2.3.0 / 2010-04-08
+
+* Debugged use of gsub_file.  Forgot to remove the quotation escapes '\'.
+  Since %q{} are being used, the escapes are uneccessary.
+
 === 2.2.0 / 2010-04-08
 
 * Debugged use of gsub_file.  Replaced '<' (comparison) with '=' (assignment).

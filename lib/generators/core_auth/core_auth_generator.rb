@@ -32,7 +32,7 @@ class CoreAuthGenerator < Rails::Generators::Base
   end
   #
   # End CoreAuth
-end
+#{marker}
 }
     end
     
@@ -41,19 +41,19 @@ end
     marker = 'module ApplicationHelper'
     gsub_file 'app/helpers/application_helper.rb', /(#{Regexp.escape(marker)})/mi do |match|
       match =%q{
-module ApplicationHelper
+#{marker}
   # Start CoreAuth
   #
   def table_for(object, options = {}, &block)
-    style = options[:style] || \"\"
-    concat(\"<table class='table-for \#{style}'>\")
+    style = options[:style] || ""
+    concat("<table class='table-for #{style}'>")
     yield
     concat('</table>')
   end
 
   def personal_area(&block)
     if session[:user_id]
-      concat \"<div style='position: absolute; text-align: right; width: 960px;'>\"
+      concat "<div style='position: absolute; text-align: right; width: 960px;'>"
       yield
       concat '</div>'
     end
