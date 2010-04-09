@@ -1,3 +1,7 @@
+=== 3.0.0 / 2010-04-08
+
+* Modified application helper code to be Rails 3 compatible.
+
 === 2.4.0 / 2010-04-08
 
 * Debugged use of gsub_file.  Replaced #{match} with string.  #{match} isn't interpolated inside %q{}.

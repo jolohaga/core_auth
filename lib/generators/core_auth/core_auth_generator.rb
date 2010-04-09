@@ -43,33 +43,29 @@ end
       match =%q{
 module ApplicationHelper
   # Start CoreAuth
-  #
+  #  
   def table_for(object, options = {}, &block)
     style = options[:style] || ""
-    concat("<table class='table-for #{style}'>")
-    yield
-    concat('</table>')
+    content_tag(:table, :class => 'table-for', &block)
   end
 
   def personal_area(&block)
     if session[:user_id]
-      concat "<div style='position: absolute; text-align: right; width: 960px;'>"
-      yield
-      concat '</div>'
+      content_tag(:div, &block)
     end
   end
 
   def system_area(&block)
     if user.admin?
-      yield
+      content_tag(:div, &block)
     end
   end
 
   def content_for_locations
-    content_for 'system_location' do
+    content_for :system_location do
       system_location
     end
-    content_for 'admin_location' do
+    content_for :admin_location do
       admin_location
     end
   end
