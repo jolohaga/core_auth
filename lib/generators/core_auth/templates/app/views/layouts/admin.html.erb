@@ -10,7 +10,9 @@
 </head>
 <body>
   <%- personal_area do -%>
+  <div style='position: absolute; text-align: right; width: 960px;'>
     <%= link_to session[:name], profile_path %>, you're logged in.  <%= link_to 'Sign out', signout_path %>
+  </div>
   <%- end -%>
   <div id='notice'>
     <%= render :partial => 'shared/notice' %>
