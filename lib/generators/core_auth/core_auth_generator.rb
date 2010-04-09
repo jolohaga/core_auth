@@ -91,6 +91,30 @@ class CoreAuthGenerator < Rails::Generators::Base
   # End CoreAuth
 }
     end
+    
+    # Inject code at beginning of application_helper.rb.
+    #
+    marker = '::Application.routes.draw do |map|'
+    gsub_file 'config/routes.rb', /(#{Regexp.escape(marker)})/mi do |match|
+      match +=%q{
+  match '/signin' => 'sessions#signin', :as => :signin, :method => :post
+  match '/signout' => 'sessions#signout', :as => :signout
+  match '/system' => 'system#index', :as => :system
+  match '/admin' => 'administration#index', :as => :admin
+  match '/home' => 'dashboard#index', :as => :home
+  resources :rights do
+    get :discover, :on => :collection
+  end
+  resources :roles do
+    resources :rights
+  end
+  resources :users
+  resources :sessions
+  match '/profile' => 'profile#show', :as => :profile
+  match '/edit' => 'profile#edit', :as => :edit_profile
+  root :to => 'welcome#index'
+}
+    end
   end
   
   def self.source_root

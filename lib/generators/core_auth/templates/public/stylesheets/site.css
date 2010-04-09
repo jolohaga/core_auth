@@ -1,0 +1,255 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: "Helvetica", sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #000; background-color:#f0f0db; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+.label {
+	font-weight: bold;
+	white-space: nowrap;
+	padding-right: 5px;
+}
+
+table.show-record tr td {
+	padding: 0 25px 12px 5px;
+}
+
+table.show-record tr td.label {
+	padding-bottom: 0;
+}
+
+table#listing tr td.label {
+	vertical-align: top;
+	text-align: right;
+	white-space: nowrap;
+	padding-right: 5px;
+	width: 10%;
+}
+
+table#listing tr td {
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	width: 40%;
+}
+
+.block-lead-in {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 10px;
+	font-style: italic;
+}
+
+.block-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+.block-subtitle {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.actions {
+    padding: 5px 0 5px 12px;
+	margin-bottom: 10px;
+	border-top: 1px dotted black;
+	border-bottom: 1px dotted black;
+}
+
+#header {
+	background-color: #536895;
+	margin: 0;
+	padding: 3px 0 3px 8px;
+	color: white;
+	font-family: "Gill Sans", san-serif;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+#banner {
+	height: 80px;
+	background-color: #e5ebeb;
+}
+
+#banner>img {
+	width: 100%;
+}
+
+#banner-title {
+	font-family: "Baskerville", serif;
+	letter-spacing: 10px;
+}
+
+#banner-title>h1 {
+	color: black;
+	font-size: 47pt;
+	font-weight: normal;
+	font-family: "Baskerville", serif;
+}
+
+#banner-title>h2 {
+	padding: 25px 0 20px 0;
+	margin: 0;
+	color: black;
+	font-size: 24pt;
+	font-weight: normal;
+	font-family: "Baskerville", serif;
+	text-align: center;
+}
+
+.float-right {
+	float: right;
+	padding-right: 10px;
+}
+
+#body {
+	padding: 0 0 10px 12px;
+}
+
+.nowrap-aligntop {
+	white-space: nowrap;
+	vertical-align: top;
+	padding: 3px 10px 8px 5px;
+}
+
+.aligntop {
+	vertical-align: top;
+	padding: 3px 10px 8px 5px;
+}
+
+.even {
+	background-color: #d5d5d5;
+}
+
+.odd {
+	background-color: #e5e5e5;
+}
+
+.odd:hover, .even:hover {
+	background-color: #ccffcc;
+}
+
+.borderless {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.borderless tr td {
+	padding: 3px 10px 8px 5px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.alert {
+	color: #aa0000;
+}
+
+.stand-out {
+	color: #0e5ca5;
+}
+
+.submitted-file-detail-type {
+	cursor: pointer;
+}
+
+.section-heading {
+	margin-bottom: 5px;
+	padding-bottom: 0;
+}
+
+table.sortable thead tr td {
+	cursor: pointer;
+}
+
+table#login-form td.label {
+	width: 5%;
+}
+
+#notice {
+	color: red;
+}
+
+#user-notice {
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: #111 3px 3px 4px;
+	background-color: red;
+	text-align: center;
+	padding: 5px 0 8px 0;
+	border: 1px dotted black;
+}
+
+.event-title {
+	color: #990000;
+}
