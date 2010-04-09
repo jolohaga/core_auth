@@ -1,3 +1,7 @@
+=== 5.2.0 / 2010-04-09
+
+* Added the WelcomeController to facilitate a public index view.
+
 === 5.0.3 / 2010-04-09
 
 * Added absolute placement to the upper-right of personal profile and sign-out links.

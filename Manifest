@@ -11,6 +11,7 @@ lib/generators/core_auth/templates/app/controllers/roles_controller.rb
 lib/generators/core_auth/templates/app/controllers/sessions_controller.rb
 lib/generators/core_auth/templates/app/controllers/system_controller.rb
 lib/generators/core_auth/templates/app/controllers/users_controller.rb
+lib/generators/core_auth/templates/app/controllers/welcome_controller.rb
 lib/generators/core_auth/templates/app/helpers/administration_helper.rb
 lib/generators/core_auth/templates/app/helpers/dashboard_helper.rb
 lib/generators/core_auth/templates/app/helpers/profile_helper.rb
@@ -57,6 +58,7 @@ lib/generators/core_auth/templates/app/views/users/edit.html.erb
 lib/generators/core_auth/templates/app/views/users/index.html.erb
 lib/generators/core_auth/templates/app/views/users/new.html.erb
 lib/generators/core_auth/templates/app/views/users/show.html.erb
+lib/generators/core_auth/templates/app/views/welcome/index.html.erb
 lib/generators/core_auth/templates/db/migrate/001_create_users.rb
 lib/generators/core_auth/templates/db/migrate/002_create_sessions.rb
 lib/generators/core_auth/templates/db/migrate/003_create_roles.rb

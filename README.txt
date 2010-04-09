@@ -8,6 +8,8 @@ A frequently recurring task in writing a new web application is creating a role-
 
 == Features/Problems:
 
+* Rails 3 compliant.
+
 * The protected area comprises of a system section (where CoreAuth is controlled and should only
   be managed by a root account-style user) and an admin section where application administrators
   can control the application.
