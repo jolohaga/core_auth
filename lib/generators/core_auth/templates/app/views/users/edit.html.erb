@@ -1,6 +1,6 @@
 <%= render :partial => 'user_header' %>
 <h1><%= link_to_unless_current @user.name, user_path(@user), :class => 'header-link' %></h1>
-<%- form_for(@user) do |f| -%>
+<%= form_for(@user) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br/>
@@ -29,4 +29,4 @@
   <p>
     <%= f.submit "Update" %>
   </p>
-<%- end -%>
+<% end %>

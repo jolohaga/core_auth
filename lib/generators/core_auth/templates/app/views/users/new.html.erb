@@ -1,5 +1,5 @@
 <h1>New user</h1>
-<%- form_for(@user) do |f| -%>
+<%= form_for(@user) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br/>
@@ -24,5 +24,5 @@
   <p>
     <%= f.submit "Create" %>
   </p>
-<%- end -%>
+<% end %>
 <%= link_to 'Back', users_path %>

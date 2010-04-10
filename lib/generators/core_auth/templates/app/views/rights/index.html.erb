@@ -1,6 +1,6 @@
 <%= render :partial => 'right_header' %>
 <div id='rights'>
-<%- table_for :rights do -%>
+<%= table_for :rights do %>
   <tr>
     <td><label>Name</label></td>
     <td><label>Controller</label></td>
@@ -8,7 +8,7 @@
     <td><label>Type</label></td>
   </tr>
   <%= render :partial => @rights %>
-<%- end -%>
+<% end %>
 </div>
 <br/>
 <div class='pagination-controls'>
@@ -16,7 +16,7 @@
 </div>
 <%- system_area do -%>
 <h3>New Right</h3>
-<%- form_for @right do |f| -%>
+<%= form_for @right do |f| %>
 <p><%= f.error_messages %></p>
 <table>
   <tr>
@@ -33,5 +33,5 @@
   </tr>
 </table>
 <p><%= f.submit "Add Right" %> | <%= link_to 'Discover', discover_rights_path %></p>
-<%- end -%>
+<% end %>
 <%- end -%>

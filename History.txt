@@ -1,3 +1,7 @@
+=== 6.1.0 / 2010-04-09
+
+* Changed <% %> to <%= %> in several templates to make them Rails 3 compatible.
+
 === 6.0.0 / 2010-04-09
 
 * Fixed users, roles and rights helpers.  They contained yields which

@@ -1,15 +1,15 @@
 <%= render :partial => 'role_header' %>
 <div id='roles'>
-<%- table_for :roles do -%>
+<%= table_for :roles do %>
   <td><label>Name</label></td>
   <td></td>
   <%= render :partial => @roles %>
-<%- end -%>
+<% end %>
 </div>
 <br/>
 <%- system_area do -%>
 <h3>New Role</h3>
-<%- form_for @role do |f| -%>
+<%= form_for @role do |f| %>
 <p><%= f.error_messages %></p>
 <table>
   <tr>
@@ -20,5 +20,5 @@
   </tr>
 </table>
 <p><%= f.submit "Add Role" %></p>
-<%- end -%>
+<% end %>
 <%- end -%>

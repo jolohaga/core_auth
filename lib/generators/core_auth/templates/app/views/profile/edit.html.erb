@@ -1,5 +1,5 @@
 <%= render :partial => 'profile_header' %>
-<%- form_for @user, :url => { :action => :update } do |f| -%>
+<%= form_for @user, :url => { :action => :update } do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br/>
@@ -20,4 +20,4 @@
   <p>
     <%= f.submit "Update" %>
   </p>
-<%- end -%>
+<% end %>

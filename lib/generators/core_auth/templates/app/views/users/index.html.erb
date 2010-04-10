@@ -1,6 +1,6 @@
 <%= render :partial => 'user_header' %>
 <div id='users'>
-<%- table_for :users do -%>
+<%= table_for :users do %>
   <tr>
     <td><label>Name</label></td>
     <td><label>Email</label></td>
@@ -9,12 +9,12 @@
     <td><label>Active?</label></td>
   </tr>
   <%= render :partial => @users %>
-<%- end -%>
+<% end %>
 </div>
 <br/>
 <%- system_area do -%>
 <h3>New User</h3>
-<%- form_for @user do |f| -%>
+<%= form_for @user do |f| %>
 <p><%= f.error_messages %></p>
 <table>
   <tr>
@@ -33,5 +33,5 @@
   </tr>
 </table>
 <p><%= f.submit "Add User" %></p>
-<%- end -%>
+<% end %>
 <%- end -%>

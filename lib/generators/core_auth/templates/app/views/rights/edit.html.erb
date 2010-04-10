@@ -1,6 +1,6 @@
 <%= render :partial => 'right_header' %>
 <h1><%= link_to_unless_current @right.name, right_path(@right), :class => 'header-link' %></h1>
-<%- form_for(@right) do |f| -%>
+<%= form_for(@right) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br/>
@@ -21,4 +21,4 @@
   <p>
     <%= f.submit "Update" %>
   </p>
-<%- end -%>
+<% end %>
