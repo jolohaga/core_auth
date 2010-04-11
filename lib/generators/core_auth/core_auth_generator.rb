@@ -114,6 +114,7 @@ class CoreAuthGenerator < Rails::Generators::Base
   resources :roles do
     resources :rights, :only => :index do
       post :assign, :on => :member
+      get :edit, :on => :collection
     end
   end
   resources :users

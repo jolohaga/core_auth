@@ -1,3 +1,7 @@
+=== 7.1.0 / 2010-04-11
+
+Fine tuning the roles/rights routes.
+
 === 7.0.0 / 2010-04-09
 
 Fixed the roles/rights routes.
