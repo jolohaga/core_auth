@@ -1,6 +1,6 @@
 <%= render :partial => 'role_header' %>
 <h1><%= link_to_unless_current @role.name, role_path(@role), :class => 'header-link' %></h1>
-<%- form_for(@role) do |f| -%>
+<%= form_for(@role) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br/>
