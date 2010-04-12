@@ -1,12 +1,37 @@
 <%= render :partial => 'role_header' %>
 <h1><%= link_to_unless_current @role.name, role_path(@role), :class => 'header-link' %></h1>
-<%= form_for(@role) do |f| %>
+<%- form_for(@role) do |f| -%>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br/>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Update" %> <span class='hint'>(Rights checked below are updated as well)</span>
   </p>
+  <hr/>
+  <h2>Rights</h2>
+  <div id='rights'>
+  <%= table_for :all_rights_by_group do %>
+    <tr>
+      <td><label>Controller</label></td>
+      <td><label>Name</label></td>
+      <td><label>Action</label></td>
+      <td><label>Assigned?</label></td>
+    </tr>
+    <%- @all_rights_by_group.keys.each do |key| -%>
+      <tr>
+        <td colspan='4' style='background-color: #fffff8;'><%= key.titleize %></td>
+      </tr>
+      <%- @all_rights_by_group[key].each do |right| -%>
+        <tr>
+          <td></td>
+          <td><%= right.name %></td>
+          <td><%= right.action %></td>
+          <td><%= check_box_tag "rights[#{right.id}]",'', !@rights_by_index[right.id].nil?, {:disabled => @role.admin?} %></td>
+        </tr>
+      <%- end -%>
+    <%- end -%>
+  <% end %>
 <% end %>
+</div>

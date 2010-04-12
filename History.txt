@@ -1,3 +1,7 @@
+=== 8.0.0 / 2010-04-12
+
+* Rethought roles/rights.  Made it much simpler.  Motivation is that 'roles are meaningless without rights'.  So rights appear as read-only in the roles' show view and as check-box selections in the roles' edit view.
+
 === 7.1.0 / 2010-04-11
 
 Fine tuning the roles/rights routes.

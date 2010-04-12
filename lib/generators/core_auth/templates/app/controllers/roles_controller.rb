@@ -15,8 +15,7 @@ class RolesController < ApplicationController
   # GET /roles/1.xml
   def show
     @role = Role.includes(:rights).find(params[:id])
-    @rights_by_index = @role.rights.index_by(&:id)
-    @all_rights_by_group = Right.order('controller, action').all.group_by(&:controller)
+    @rights = @role.rights
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @role }
@@ -35,7 +34,9 @@ class RolesController < ApplicationController
 
   # GET /roles/1/edit
   def edit
-    @role = Role.find(params[:id])
+    @role = Role.includes(:rights).find(params[:id])
+    @rights_by_index = @role.rights.index_by(&:id)
+    @all_rights_by_group = Right.order('controller, action').all.group_by(&:controller)
   end
 
   # POST /roles
@@ -60,6 +61,11 @@ class RolesController < ApplicationController
     @role = Role.find(params[:id])
     respond_to do |format|
       if @role.update_attributes(params[:role])
+        # First clear rights and then set them to params[:rights].keys
+        @role.rights.delete_all
+        if params[:rights]
+          @role.rights << Right.find(params[:rights].keys)
+        end
         flash[:notice] = 'Role was successfully updated.'
         format.html { redirect_to(@role) }
         format.xml  { head :ok }
@@ -79,18 +85,6 @@ class RolesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(roles_url) }
       format.xml  { head :ok }
-    end
-  end
-  
-  def assign
-    role = Role.find(params[:id])
-    right = Right.find(params[:right_id])
-    unless role.name == Role::SYSTEM
-      if role.rights.find_by_id(right)
-        role.rights.delete(right) # Delete right
-      else
-        role.rights << right
-      end
     end
   end
 end

@@ -161,3 +161,9 @@ a.info:hover span {
 #notice {
   color: red;
 }
+
+.hint {
+  color: #aaa;
+  font-style: italic;
+  font-weight: normal;
+}
