@@ -1,3 +1,8 @@
+=== 8.1.0 / 2010-04-12
+
+* Fixed profile routes.
+* Factored profile form fields into 'shared/profile_form.html.erb'.  It's used by profile#edit and user#edit.
+
 === 8.0.1 / 2010-04-12
 
 Accidentally reintroduced <%- in the roles' edit template.

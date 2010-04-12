@@ -119,8 +119,9 @@ class CoreAuthGenerator < Rails::Generators::Base
   end
   resources :users
   resources :sessions
-  match '/profile' => 'profile#show', :as => :profile
-  match '/edit' => 'profile#edit', :as => :edit_profile
+  match '/profile' => 'profile#show'
+  match '/edit_profile' => 'profile#edit'
+  match '/update_profile' => 'profile#update'
   root :to => 'welcome#index'
 }
     end

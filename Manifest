@@ -50,6 +50,7 @@ lib/generators/core_auth/templates/app/views/roles/show.html.erb
 lib/generators/core_auth/templates/app/views/sessions/signin.html.erb
 lib/generators/core_auth/templates/app/views/sessions/signout.html.erb
 lib/generators/core_auth/templates/app/views/shared/_notice.html.erb
+lib/generators/core_auth/templates/app/views/shared/_profile_form.html.erb
 lib/generators/core_auth/templates/app/views/system/_system_header.html.erb
 lib/generators/core_auth/templates/app/views/system/index.html.erb
 lib/generators/core_auth/templates/app/views/users/_user.html.erb
