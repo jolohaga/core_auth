@@ -83,7 +83,7 @@ class RightsController < ApplicationController
     end
   end
   
-  # Show unregistered rights.  That is, controllers and actions existing in the application controllers
+  # Show unregistered rights.  That is, actions existing in the application's controller files
   # which haven't yet been added to the Rights database.
   #
   def unregistered

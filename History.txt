@@ -1,3 +1,9 @@
+=== 8.3.0 / 2010-04-22
+
+* Simplified the structure holding controllers and actions.  Code using the structure changed.
+* Replaced eval with Kernel.const_get.
+* Updated Manifest file.
+
 === 8.2.1 / 2010-04-22
 
 * Changed route, method, and view of listing of unlisted controllers to 'unregistered'.

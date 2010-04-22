@@ -39,7 +39,7 @@ lib/generators/core_auth/templates/app/views/rights/edit.html.erb
 lib/generators/core_auth/templates/app/views/rights/index.html.erb
 lib/generators/core_auth/templates/app/views/rights/new.html.erb
 lib/generators/core_auth/templates/app/views/rights/show.html.erb
-lib/generators/core_auth/templates/app/views/rights/unlisted_actions.html.erb
+lib/generators/core_auth/templates/app/views/rights/unregistered.html.erb
 lib/generators/core_auth/templates/app/views/roles/_role.html.erb
 lib/generators/core_auth/templates/app/views/roles/_role_header.html.erb
 lib/generators/core_auth/templates/app/views/roles/assign.html.erb

@@ -22,7 +22,7 @@ class Right < ActiveRecord::Base
   def self.controllers_and_actions
     controller_directory = "#{Rails.root}/app/controllers/"
     controller_files = []
-    controllers_and_actions = []
+    controllers_and_actions = {}
     Find.find(controller_directory) do |node|
       if FileTest.file?(node)
         controller_files << node.gsub("#{controller_directory}","")
@@ -36,10 +36,10 @@ class Right < ActiveRecord::Base
         controller = controller_file.gsub(".rb","").camelize
         # => SomeController1, SomeModule::SomeController2, ...
         actions = []
-        (eval("#{controller}.public_instance_methods") - (ApplicationController.methods + Object.methods + ApplicationController.public_instance_methods - ["new"])).sort.each do |action|
+        (Kernel.const_get("#{controller}").public_instance_methods - (ApplicationController.methods + Object.methods + ApplicationController.public_instance_methods - ["new"])).reject{|w| w =~ /^_/}.sort.each do |action|
           actions << action
         end
-        controllers_and_actions << {:controller_path => controller_path, :actions => actions}
+        controllers_and_actions["#{controller_path}"] = actions
       end
     end
     controllers_and_actions
@@ -52,10 +52,10 @@ class Right < ActiveRecord::Base
   def self.new_controllers_and_actions
     c_and_as = controllers_and_actions
     new_c_and_as = []
-    c_and_as.each do |i|
-      i[:actions].each do |k|
-        unless Right.find_by_controller_and_action(i[:controller_path],k)
-          new_c_and_as << {:controller => i[:controller_path], :action => k}
+    c_and_as.each_pair do |controller,actions|
+      actions.each do |action|
+        unless Right.find_by_controller_and_action(controller,action)
+          new_c_and_as << {:controller => controller, :action => action}
         end
       end
     end
