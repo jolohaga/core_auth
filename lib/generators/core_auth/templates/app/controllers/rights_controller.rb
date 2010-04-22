@@ -46,7 +46,7 @@ class RightsController < ApplicationController
     respond_to do |format|
       if @right.save
         flash[:notice] = 'Right was successfully created.'
-        format.html { redirect_to rights_path }
+        format.html { redirect_to @right }
         format.xml  { render :xml => @right, :status => :created, :location => @right }
       else
         format.html { render :action => "new" }
@@ -83,7 +83,7 @@ class RightsController < ApplicationController
     end
   end
   
-  def discover
+  def unlisted_actions
     @rights = Right.new_controllers_and_actions
   end
   

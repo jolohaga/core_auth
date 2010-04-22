@@ -1,3 +1,8 @@
+=== 8.2.0 / 2010-04-22
+
+* Changed redirection to the show view on creation of new right.
+* For listing of unlisted controllers and actions changed the route, method and view name from discover to unlisted_actions.
+
 === 8.1.0 / 2010-04-12
 
 * Fixed profile routes.
