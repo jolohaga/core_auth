@@ -109,7 +109,7 @@ class CoreAuthGenerator < Rails::Generators::Base
   match '/admin' => 'administration#index', :as => :admin
   match '/home' => 'dashboard#index', :as => :home
   resources :rights do
-    get :unlisted_actions, :on => :collection
+    get :unregistered, :on => :collection
   end
   resources :roles do
     resources :rights, :only => :index do

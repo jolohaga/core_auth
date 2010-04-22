@@ -83,7 +83,10 @@ class RightsController < ApplicationController
     end
   end
   
-  def unlisted_actions
+  # Show unregistered rights.  That is, controllers and actions existing in the application controllers
+  # which haven't yet been added to the Rights database.
+  #
+  def unregistered
     @rights = Right.new_controllers_and_actions
   end
   
