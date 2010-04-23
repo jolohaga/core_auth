@@ -90,6 +90,18 @@ class RightsController < ApplicationController
     @rights = Right.new_controllers_and_actions
   end
   
+  def register
+    params[:right].each do |right|
+      if right[1] == '1'
+        (controller,action) = right[0].split(':')
+        Right.create(:name => Right.right_name(controller,action),:controller => controller,:action => action,:authorization_type => Right::ANCILLARY)
+      end
+    end
+    respond_to do |format|
+      format.html { redirect_to rights_path }
+    end
+  end
+  
   def assign
     unless Right.find_by_name(params[:right_name])
       right = Right.new(:name => params[:right_name],

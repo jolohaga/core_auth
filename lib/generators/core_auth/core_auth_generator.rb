@@ -110,6 +110,7 @@ class CoreAuthGenerator < Rails::Generators::Base
   match '/home' => 'dashboard#index', :as => :home
   resources :rights do
     get :unregistered, :on => :collection
+    post :register, :on => :collection
   end
   resources :roles do
     resources :rights, :only => :index do

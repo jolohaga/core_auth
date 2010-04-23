@@ -32,9 +32,9 @@ lib/generators/core_auth/templates/app/views/layouts/site.html.erb
 lib/generators/core_auth/templates/app/views/profile/_profile_header.html.erb
 lib/generators/core_auth/templates/app/views/profile/edit.html.erb
 lib/generators/core_auth/templates/app/views/profile/show.html.erb
-lib/generators/core_auth/templates/app/views/rights/_discovered.html.erb
 lib/generators/core_auth/templates/app/views/rights/_right.html.erb
 lib/generators/core_auth/templates/app/views/rights/_right_header.html.erb
+lib/generators/core_auth/templates/app/views/rights/_unregistered.html.erb
 lib/generators/core_auth/templates/app/views/rights/edit.html.erb
 lib/generators/core_auth/templates/app/views/rights/index.html.erb
 lib/generators/core_auth/templates/app/views/rights/new.html.erb

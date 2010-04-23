@@ -1,12 +1,15 @@
 <%= render :partial => 'right_header' %>
-<%= table_for :rights do %>
-  <tr>
-    <td><label>Name</label></td>
-    <td><label>Controller</label></td>
-    <td><label>Action</label></td>
-    <td><label>Add</label></td>
-  </tr>
-  <%- @rights.each do |right| -%>
-  <%= render :partial => 'discovered', :locals => { :right => right } %>
-  <%- end -%>
+<%= form_tag register_rights_path do %>
+  <%= table_for :rights do %>
+    <tr>
+      <td><label>Name</label></td>
+      <td><label>Controller</label></td>
+      <td><label>Action</label></td>
+      <td><label>Add</label></td>
+    </tr>
+    <%- @rights.each do |right| -%>
+      <%= render :partial => 'unregistered', :locals => { :right => right } %>
+    <%- end -%>
+  <% end %>
+  <p><%= submit_tag 'Submit' %></p>
 <% end %>

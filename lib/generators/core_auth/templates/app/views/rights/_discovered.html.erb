@@ -1,6 +1,0 @@
-<tr>
-  <td><%= Right.right_name(right[:controller],right[:action]) %></td>
-  <td><%= right[:controller] %></td>
-  <td><%= right[:action] %></td>
-  <td><%= check_box_tag "right", "discovered?", false, { :onchange => remote_function(:update => "rights[#{right.id}]", :url => { :action => :assign, :right_name => Right.right_name(right[:controller],right[:action]), :right_controller => right[:controller], :right_action => right[:action] })}  %></td>
-</tr>
