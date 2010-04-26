@@ -11,11 +11,9 @@
   <%= render :partial => @users %>
 <% end %>
 </div>
-<br/>
 <%- system_area do -%>
-<h3>New User</h3>
+<h2>New User</h2>
 <%= form_for @user do |f| %>
-<p><%= f.error_messages %></p>
 <table>
   <tr>
     <td><%= f.label :name, "Name" %></td>

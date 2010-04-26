@@ -15,7 +15,8 @@ class RolesController < ApplicationController
   # GET /roles/1.xml
   def show
     @role = Role.includes(:rights).find(params[:id])
-    @rights = @role.rights
+    @rights = @role.rights.order('controller,action')
+    @unassigned_rights = Right.order('controller,action').all - @rights
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @role }

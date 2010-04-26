@@ -8,6 +8,7 @@ lib/generators/core_auth/templates/app/controllers/dashboard_controller.rb
 lib/generators/core_auth/templates/app/controllers/profile_controller.rb
 lib/generators/core_auth/templates/app/controllers/rights_controller.rb
 lib/generators/core_auth/templates/app/controllers/roles_controller.rb
+lib/generators/core_auth/templates/app/controllers/roles_rights_controller.rb
 lib/generators/core_auth/templates/app/controllers/sessions_controller.rb
 lib/generators/core_auth/templates/app/controllers/system_controller.rb
 lib/generators/core_auth/templates/app/controllers/users_controller.rb
@@ -17,6 +18,7 @@ lib/generators/core_auth/templates/app/helpers/dashboard_helper.rb
 lib/generators/core_auth/templates/app/helpers/profile_helper.rb
 lib/generators/core_auth/templates/app/helpers/rights_helper.rb
 lib/generators/core_auth/templates/app/helpers/roles_helper.rb
+lib/generators/core_auth/templates/app/helpers/roles_rights_helper.rb
 lib/generators/core_auth/templates/app/helpers/sessions_helper.rb
 lib/generators/core_auth/templates/app/helpers/system_helper.rb
 lib/generators/core_auth/templates/app/helpers/users_helper.rb

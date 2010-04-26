@@ -120,6 +120,9 @@ class CoreAuthGenerator < Rails::Generators::Base
   end
   resources :users
   resources :sessions
+  match 'roles/:role_id/assign_right' => 'roles_rights#assign_right', :method => :post, :as => :assign_right_roles_rights
+  match 'roles/:role_id/unassign/:right_id' => 'roles_rights#unassign', :method => :delete, :as => :unassign_roles_rights
+  match 'roles/:role_id/assign_rights' => 'roles_rights#assign_rights', :method => :post, :as => :assign_rights_roles_rights
   match '/profile' => 'profile#show'
   match '/edit_profile' => 'profile#edit'
   match '/update_profile' => 'profile#update'

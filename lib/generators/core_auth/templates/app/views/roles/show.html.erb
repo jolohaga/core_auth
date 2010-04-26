@@ -6,6 +6,11 @@
 <%- end -%>
 <hr/>
 <h2>Rights</h2>
+<%= form_tag assign_right_roles_rights_path(@role) do %>
+  <h2 style='display:inline'>Rights</h2>&nbsp;&nbsp;&nbsp;&nbsp;<label>Assign Right</label>
+  <%= select_tag 'right', options_from_collection_for_select(@unassigned_rights, 'id', 'name') %>
+  <%= submit_tag 'Assign' %>
+<%- end -%>
 <div id='rights'>
   <%= table_for :rights do %>
     <tr>
@@ -13,6 +18,7 @@
       <td><label>Controller</label></td>
       <td><label>Action</label></td>
       <td><label>Type</label></td>
+      <td><label>Action</label></td>
     </tr>
     <%= render :partial => @rights %>
   <% end %>

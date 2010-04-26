@@ -3,4 +3,7 @@
   <td><%=h right.controller %></td>
   <td><%=h right.action %></td>
   <td><%=h right.authorization_type %></td>
+  <%- if params[:action] == 'show' -%>
+    <td><%= link_to 'Remove', unassign_roles_rights_path(@role,right), :confirm => 'Are you sure?', :method => :delete %></td>
+  <%- end -%>
 </tr>

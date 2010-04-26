@@ -101,14 +101,4 @@ class RightsController < ApplicationController
       format.html { redirect_to rights_path }
     end
   end
-  
-  def assign
-    unless Right.find_by_name(params[:right_name])
-      right = Right.new(:name => params[:right_name],
-                        :controller => params[:right_controller],
-                        :action => params[:right_action],
-                        :authorization_type => Right::ANCILLARY)
-      right.save
-    end
-  end
 end

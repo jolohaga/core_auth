@@ -1,3 +1,10 @@
+=== 9.0.0 / 2010-04-26
+
+* Added RolesRightsController.
+* Added routes and actions for managing assignment and removal of rights to roles.
+* Changed the size and position of some view elements.
+* Removed some f.error_messages.  This is deprecated in Rails3, but still need to replace it with the supported method.
+
 === 8.4.0 / 2010-04-23
 
 * Added the unregistered and register actions (for RightsController), and the routes and views for these actions.
